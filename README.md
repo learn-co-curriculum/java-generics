@@ -167,3 +167,5 @@ actually do another generic type invocation too when we execute the
 ## References
 
 - [Oracle Docs: Why Use Generics?](https://docs.oracle.com/javase/tutorial/java/generics/why.html#:~:text=In%20a%20nutshell%2C%20generics%20enable,same%20code%20with%20different%20inputs.)
+- [Java 17 ArrayList](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html)
+- [Java 17 HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)
