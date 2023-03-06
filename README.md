@@ -10,7 +10,7 @@
 
 Looking back on the data structures we just learned about, we saw we could have
 a collection of reference type variables; such as a `List` of `Book` objects,
-or a `Queue` of `String` variables. All of these data structures worked
+or a `Set` of `String` variables. All of these data structures worked
 logically the same despite the different type of object we defined the data
 structure to hold. That is because Java heavily uses the concept of generics.
 **Generics** are _parameterized types_ which enable us to create classes,
@@ -23,7 +23,7 @@ to avoid explicit casting, which could cause type mismatches.
 
 We will run into situations where we might want to apply the same logic to
 objects regardless of their type. For example, imagine that we want to create a
-method that prints a list of the elements in an array. I could have the
+method that prints a list of the elements in an array. We could have the
 following code:
 
 ```java
@@ -59,9 +59,9 @@ We would have to make a similarly different version of the `printArray()` method
 for every single type of array we want to be able to handle, even though the
 actual logic of the method is exactly the same.
 
-Generics allow us to avoid that code duplication by letting us defined a version
-of the `printArray()` method that takes a "generic" type and applies the same
-logic as each variation of our methods above:
+Generics allow us to avoid code duplication by letting us define a version of
+the `printArray()` method that takes a "generic" type and applies the same logic
+as each variation of our methods above:
 
 ```java
 static <E> void printArray(E[] arrayToPrint) {
@@ -113,11 +113,11 @@ we said this is a valid way of defining a `List` but is not recommended?
 List myList = new ArrayList();
 ```
 
-In the above line of code, we could add any object we wanted to this list. But
-by doing so is not recommended as we discussed. This is where generics come into
-play: we can change the list definition to specify what type of items we want in
-the list by using the **diamond operator**, `<>`. By definition, the `ArrayList`
-is a generic class since it is defined as such:
+In the above line of code, we could add any object we want to this list. But
+doing so is not recommended as we discussed in the previous lessons. This is
+where generics come into play: we can change the list definition to specify
+what type of items we want in the list by using the **diamond operator**, `<>`.
+By definition, the `ArrayList` is a generic class since it is defined as such:
 
 ```java
 public class ArrayList<E> extends AbstractList<E> implements List<E> {}
@@ -143,7 +143,7 @@ public class MapExample {
 }
 ```
 
-Our `Map` interface take in a key/value pair of generic types too! Let's look
+Our `Map` interface takes in a key/value pair of generic types too! Let's look
 at the definition of a `HashMap` a little closer.
 
 ```java
@@ -163,3 +163,7 @@ type invocation to replace the generic type `K` with the concrete value
 `String`, and the generic `V` with the concrete value of `Character`. We will
 actually do another generic type invocation too when we execute the
 `put(K key, V value)` too.
+
+## References
+
+- [Oracle Docs: Why Use Generics?](https://docs.oracle.com/javase/tutorial/java/generics/why.html#:~:text=In%20a%20nutshell%2C%20generics%20enable,same%20code%20with%20different%20inputs.)
